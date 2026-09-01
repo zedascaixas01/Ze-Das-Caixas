@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zé dos Vapes | Caixas premium, sabores fortes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== VERIFICAÇÃO DE IDADE ===== -->
+<div class="age-gate" id="ageGate">
+  <div class="age-gate-card">
+    <p class="age-gate-brand"><span>ZÉ</span><span class="brand-mark--blue">DOS VAPES</span></p>
+    <h2 class="age-gate-title">Tens 18 anos ou mais?</h2>
+    <p class="age-gate-text">Este site vende produtos com nicotina, destinados exclusivamente a maiores de 18 anos. Confirma a tua idade para continuar.</p>
+    <div class="age-gate-actions">
+      <button type="button" class="btn btn--primary btn--full" id="ageGateYes">Sim, tenho 18+</button>
+      <button type="button" class="btn btn--ghost btn--full" id="ageGateNo">Não, sou menor</button>
+    </div>
+    <p class="age-gate-blocked" id="ageGateBlocked" hidden>Lamentamos, mas este site é apenas para maiores de 18 anos e não podes continuar.</p>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark">ZÉ</span><span class="brand-mark brand-mark--blue">DOS VAPES</span>
+    </div>
+    <nav class="header-nav">
+      <a href="#catalogo">Catálogos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#" id="navSupportLink" target="_blank" rel="noopener" class="nav-support-link">Abrir Suporte</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-toggle" id="cartToggle" aria-label="Abrir carrinho">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#catalogo">Catálogos</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#" id="navSupportLinkMobile" target="_blank" rel="noopener">Abrir Suporte</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-smoke" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="eyebrow">STOCK LIMITADO</p>
+    <h1 class="hero-title">Zé dos<span>Vapes</span></h1>
+    <p class="hero-subtitle">Caixas premium das melhores marcas. Escolhes, adicionas ao carrinho, combinamos tudo no WhatsApp.</p>
+    <a href="#catalogo" class="btn btn--primary">Ver catálogo completo</a>
+
+    <div class="hero-catalog-buttons" id="heroCatalogButtons">
+      <!-- gerado via JS: um botão por marca -->
+    </div>
+
+    <div class="social-proof">
+      <div class="avatar-stack">
+        <span class="avatar" style="background:#2f7dff;">M</span>
+        <span class="avatar" style="background:#7fd7ff; color:#0a0f1c;">R</span>
+        <span class="avatar" style="background:#f0b429; color:#1a1400;">S</span>
+        <span class="avatar" style="background:#123a7a;">D</span>
+        <span class="avatar" style="background:#4ade80; color:#0a2013;">A</span>
+      </div>
+      <p class="social-proof-text"><strong>+436</strong> Compradores em Portugal</p>
+    </div>
+  </div>
+
+  <div class="feedback-marquee-wrap">
+    <p class="feedback-heading">Alguns dos nossos clientes</p>
+    <div class="feedback-marquee" id="feedbackMarquee">
+      <!-- gerado via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIS VENDIDOS ===== -->
+<section class="bestsellers" id="maisVendidos">
+  <div class="section-head">
+    <p class="eyebrow">OS FAVORITOS</p>
+    <h2>Vapes mais vendidos</h2>
+  </div>
+  <div class="product-grid" id="bestsellerGrid">
+    <!-- gerado via JS -->
+  </div>
+</section>
+
+<!-- ===== MAIS PUFFS ===== -->
+<section class="bestsellers" id="maisPuffs">
+  <div class="section-head">
+    <p class="eyebrow">PARA QUEM QUER MAIS</p>
+    <h2>Mais Puffs</h2>
+  </div>
+  <div class="product-grid" id="maisPuffsGrid">
+    <!-- gerado via JS -->
+  </div>
+</section>
+
+<!-- ===== CATÁLOGO ===== -->
+<section class="catalog" id="catalogo">
+  <div class="section-head">
+    <p class="eyebrow">CATÁLOGO</p>
+    <h2>Escolhe a tua caixa</h2>
+  </div>
+
+  <div class="brand-filters" id="brandFilters">
+    <!-- gerado via JS -->
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <!-- gerado via JS -->
+  </div>
+</section>
+
+<!-- ===== COMO FUNCIONA ===== -->
+<section class="how-it-works" id="como-funciona">
+  <div class="section-head">
+    <p class="eyebrow">SEM COMPLICAÇÕES</p>
+    <h2>Como funciona</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">01</span>
+      <h3>Escolhes as caixas</h3>
+      <p>Adiciona ao carrinho ou compra uma caixa diretamente.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">02</span>
+      <h3>Preenches o envio</h3>
+      <p>Nome, morada e contacto — só demora 30 segundos.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">03</span>
+      <h3>Confirmas no WhatsApp</h3>
+      <p>O pedido chega-me já pronto. Combinamos pagamento e envio por lá.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p class="brand-mark-footer"><span>ZÉ</span><span class="brand-mark--blue">DOS VAPES</span></p>
+  <p>Venda destinada exclusivamente a maiores de 18 anos.</p>
+  <p>Dúvidas? Fala diretamente comigo no <a id="footerWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>.</p>
+</footer>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras">
+  <div class="drawer-header">
+    <h2>O teu carrinho</h2>
+    <button class="drawer-close" id="drawerClose" aria-label="Fechar carrinho">&times;</button>
+  </div>
+
+  <div class="drawer-body">
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" id="cartEmpty">O carrinho está vazio. Adiciona uma caixa do catálogo.</p>
+    </div>
+
+    <div class="cart-total-row" id="cartTotalRow" hidden>
+      <span>Total</span>
+      <span id="cartTotal">0,00&nbsp;€</span>
+    </div>
+
+    <form class="shipping-form" id="shippingForm" hidden>
+      <p class="form-title">Dados de envio</p>
+      <label>
+        Nome completo
+        <input type="text" id="shipName" required placeholder="O teu nome">
+      </label>
+      <label>
+        Morada
+        <input type="text" id="shipAddress" required placeholder="Rua, número, andar">
+      </label>
+      <div class="form-row">
+        <label>
+          Código postal
+          <input type="text" id="shipZip" required placeholder="0000-000">
+        </label>
+        <label>
+          Localidade
+          <input type="text" id="shipCity" required placeholder="Cidade">
+        </label>
+      </div>
+      <label>
+        Contacto (telemóvel)
+        <input type="tel" id="shipPhone" required placeholder="9XX XXX XXX">
+      </label>
+
+      <button type="submit" class="btn btn--primary btn--full">Avançar para pagamento</button>
+      <p class="form-note">Vais ser direcionado para o WhatsApp com o pedido já preenchido.</p>
+    </form>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
