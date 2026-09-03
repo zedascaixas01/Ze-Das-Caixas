@@ -416,11 +416,40 @@ a { color: inherit; }
 
 /* ============ CARROSSEL DE FEEDBACK ============ */
 .feedback-marquee-wrap {
+  position: relative;
   margin-top: 50px;
   padding-top: 4px;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+/* Desvanecimento nas pontas via gradientes sobrepostos (mais compatível
+   entre browsers móveis do que a propriedade CSS mask-image, que tem
+   suporte inconsistente em alguns browsers Android e pode esconder
+   o elemento inteiro quando falha a interpretar a máscara) */
+.feedback-marquee-wrap::before,
+.feedback-marquee-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.feedback-marquee-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.feedback-marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+@media (max-width: 640px) {
+  .feedback-marquee-wrap::before,
+  .feedback-marquee-wrap::after {
+    width: 30px;
+  }
 }
 
 .feedback-heading {
