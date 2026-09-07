@@ -415,6 +415,7 @@ a { color: inherit; }
 }
 
 /* ============ CARROSSEL DE FEEDBACK ============ */
+
 .feedback-marquee-wrap {
   position: relative;
   margin-top: 50px;
@@ -422,10 +423,9 @@ a { color: inherit; }
   overflow: hidden;
 }
 
-/* Desvanecimento nas pontas via gradientes sobrepostos (mais compatível
-   entre browsers móveis do que a propriedade CSS mask-image, que tem
-   suporte inconsistente em alguns browsers Android e pode esconder
-   o elemento inteiro quando falha a interpretar a máscara) */
+
+/* Gradiente nas laterais */
+
 .feedback-marquee-wrap::before,
 .feedback-marquee-wrap::after {
   content: "";
@@ -436,21 +436,27 @@ a { color: inherit; }
   z-index: 2;
   pointer-events: none;
 }
+
 .feedback-marquee-wrap::before {
   left: 0;
-  background: linear-gradient(to right, var(--bg), transparent);
-}
-.feedback-marquee-wrap::after {
-  right: 0;
-  background: linear-gradient(to left, var(--bg), transparent);
+  background: linear-gradient(
+    to right,
+    var(--bg),
+    transparent
+  );
 }
 
-@media (max-width: 640px) {
-  .feedback-marquee-wrap::before,
-  .feedback-marquee-wrap::after {
-    width: 30px;
-  }
+.feedback-marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--bg),
+    transparent
+  );
 }
+
+
+/* Título */
 
 .feedback-heading {
   text-align: center;
@@ -462,49 +468,209 @@ a { color: inherit; }
   margin: 0 0 22px;
 }
 
+
+/* Track que contém todas as imagens */
+
 .feedback-marquee {
   display: flex;
   align-items: center;
+
   gap: 20px;
+
   width: max-content;
-  will-change: transform;
-  animation: feedback-scroll 38s linear infinite;
+
   padding: 10px 0;
+
+  will-change: transform;
+
+  animation:
+    feedback-scroll
+    38s
+    linear
+    infinite;
 }
 
-.feedback-marquee.paused { animation-play-state: paused; }
+
+/* Pausa no PC quando o rato fica por cima */
+
+.feedback-marquee.paused {
+  animation-play-state: paused;
+}
+
+
+/* Movimento infinito */
 
 @keyframes feedback-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    /*
+      A lista está duplicada.
+
+      Como existe gap de 20px,
+      adicionamos metade desse gap
+      para o loop não dar um pequeno salto.
+    */
+
+    transform:
+      translateX(
+        calc(-50% - 10px)
+      );
+  }
+
 }
+
+
+/* Estado normal das imagens */
 
 .feedback-img {
+
   height: 230px;
+
   width: auto;
-  border-radius: 12px;
-  object-fit: cover;
+
   flex-shrink: 0;
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+
+  /*
+    Estado desfocado
+  */
+
   filter: blur(3px);
+
   opacity: 0.55;
+
   transform: scale(0.93);
-  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+
+
+  /*
+    Transição quando entra/sai do centro
+  */
+
+  transition:
+    filter 0.35s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease;
+
+
+  box-shadow:
+    0 12px 30px -10px
+    rgba(0, 0, 0, 0.6);
+
+
+  /*
+    Ajuda principalmente Safari/mobile
+    a renderizar melhor elementos
+    animados com transform/filter
+  */
+
+  -webkit-backface-visibility: hidden;
+
+  backface-visibility: hidden;
 }
+
+
+/* Imagem que está no centro */
 
 .feedback-img.is-sharp {
+
   filter: blur(0);
+
   opacity: 1;
+
   transform: scale(1.05);
+
 }
+
+
+/* Pessoas que têm "reduzir movimento" ativado */
 
 @media (prefers-reduced-motion: reduce) {
-  .feedback-marquee { animation: none; }
-  .feedback-img { filter: none; opacity: 1; transform: none; }
+
+  .feedback-marquee {
+
+    animation: none;
+
+  }
+
+  .feedback-img {
+
+    filter: none;
+
+    opacity: 1;
+
+    transform: none;
+
+  }
+
 }
 
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 640px) {
-  .feedback-img { height: 160px; }
+
+  /*
+    Gradiente lateral mais pequeno
+    porque o ecrã também é mais pequeno
+  */
+
+  .feedback-marquee-wrap::before,
+  .feedback-marquee-wrap::after {
+
+    width: 30px;
+
+  }
+
+
+  /*
+    Imagens ligeiramente menores
+  */
+
+  .feedback-img {
+
+    height: 160px;
+
+
+    /*
+      Blur um pouco menor no mobile.
+
+      É bastante mais leve para
+      Safari/Chrome mobile renderizarem.
+    */
+
+    filter: blur(2px);
+
+
+    /*
+      Transição mais rápida para que
+      visualmente acompanhe melhor
+      a imagem que chegou ao centro.
+    */
+
+    transition:
+      filter 0.20s ease,
+      opacity 0.20s ease,
+      transform 0.20s ease;
+
+  }
+
+
+  .feedback-img.is-sharp {
+
+    filter: blur(0);
+
+  }
+
 }
 
 /* ============ BESTSELLERS ============ */
