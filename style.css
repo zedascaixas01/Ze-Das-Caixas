@@ -413,11 +413,8 @@ a { color: inherit; }
   color: var(--white);
   font-family: var(--font-mono);
 }
-
 /* ============ CARROSSEL DE FEEDBACK ============ */
 
-
-/* Container geral */
 
 .feedback-carousel-wrap {
 
@@ -451,9 +448,13 @@ a { color: inherit; }
 }
 
 
-/* Área principal */
+/* ==================================
+   ÁREA DO CARROSSEL
+   ================================== */
 
 .feedback-carousel-shell {
+
+  position: relative;
 
   width: 100%;
 
@@ -461,111 +462,113 @@ a { color: inherit; }
 
   margin: 0 auto;
 
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 14px;
-
 }
 
 
-/* Área onde aparecem as imagens */
+/* ==================================
+   LINHA HORIZONTAL DE FEEDBACKS
+   ================================== */
 
 .feedback-marquee {
 
-  flex: 1;
+  position: relative;
 
-  display: grid;
+  display: flex;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  align-items: center;
-
-  gap: 20px;
-
-  min-width: 0;
-
-  padding: 20px 0;
-
-}
-
-
-/* Feedback */
-
-.feedback-img {
-
-  display: block;
+  gap: 16px;
 
   width: 100%;
 
-  max-width: 230px;
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  padding: 10px 4px 18px;
+
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+
+}
+
+
+/* Esconde scrollbar no Chrome/Safari */
+
+.feedback-marquee::-webkit-scrollbar {
+
+  display: none;
+
+}
+
+
+/* ==================================
+   IMAGENS
+   ================================== */
+
+.feedback-img {
+
+  /*
+    3 imagens visíveis no PC
+  */
+
+  flex:
+    0 0
+    calc(
+      (100% - 32px) / 3
+    );
+
 
   height: 300px;
 
-  margin: 0 auto;
-
   object-fit: contain;
+
+  background:
+    var(--bg-elevated);
 
   border-radius: 14px;
 
-  background: var(--bg-elevated);
+  scroll-snap-align: start;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
 
   box-shadow:
-    0 16px 35px -12px
-    rgba(0, 0, 0, 0.7);
-
-  transition:
-    transform 0.35s ease,
-    opacity 0.35s ease;
+    0 12px 30px -10px
+    rgba(0, 0, 0, 0.65);
 
 }
 
 
-/* Feedbacks laterais no PC */
-
-.feedback-img--side {
-
-  transform: scale(0.88);
-
-  opacity: 0.42;
-
-}
-
-
-/* Feedback principal */
-
-.feedback-img--active {
-
-  transform: scale(1);
-
-  opacity: 1;
-
-}
-
-
-/* ============================
+/* ==================================
    SETAS
-   ============================ */
+   ================================== */
 
 .feedback-arrow {
 
-  width: 44px;
+  position: absolute;
 
-  height: 44px;
+  top: 50%;
 
-  flex-shrink: 0;
+  z-index: 5;
+
+  width: 42px;
+
+  height: 42px;
 
   border-radius: 50%;
 
   border:
-    1px solid var(--border);
+    1px solid
+    rgba(255, 255, 255, 0.15);
 
   background:
-    var(--bg-elevated);
+    rgba(6, 7, 13, 0.88);
 
   color:
     var(--white);
@@ -582,31 +585,63 @@ a { color: inherit; }
 
   justify-content: center;
 
+  transform:
+    translateY(-50%);
+
+  backdrop-filter:
+    blur(6px);
+
   transition:
     background 0.2s ease,
-    border-color 0.2s ease,
     transform 0.2s ease;
 
 }
 
+
+/* Esquerda */
+
+.feedback-arrow--left {
+
+  left: 10px;
+
+}
+
+
+/* Direita */
+
+.feedback-arrow--right {
+
+  right: 10px;
+
+}
+
+
+/* Hover PC */
 
 .feedback-arrow:hover {
 
   background:
     var(--blue-electric);
 
-  border-color:
-    var(--blue-electric);
-
   transform:
+    translateY(-50%)
     scale(1.08);
 
 }
 
 
-/* ============================
+/* Quando chegamos ao início/fim */
+
+.feedback-arrow[hidden] {
+
+  display: none;
+
+}
+
+
+/* ==================================
    BOLINHAS
-   ============================ */
+   ================================== */
 
 .feedback-dots {
 
@@ -616,26 +651,26 @@ a { color: inherit; }
 
   justify-content: center;
 
-  flex-wrap: wrap;
+  gap: 6px;
 
-  gap: 7px;
+  flex-wrap: wrap;
 
   max-width: 400px;
 
-  margin: 14px auto 0;
+  margin: 10px auto 0;
 
 }
 
 
 .feedback-dot {
 
-  width: 8px;
+  width: 7px;
 
-  height: 8px;
+  height: 7px;
 
   padding: 0;
 
-  border: none;
+  border: 0;
 
   border-radius: 50%;
 
@@ -653,9 +688,10 @@ a { color: inherit; }
 
 .feedback-dot.active {
 
-  width: 22px;
+  width: 20px;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   background:
     var(--blue-electric);
@@ -663,9 +699,9 @@ a { color: inherit; }
 }
 
 
-/* ============================
+/* ==================================
    MOBILE
-   ============================ */
+   ================================== */
 
 @media (max-width: 640px) {
 
@@ -678,56 +714,45 @@ a { color: inherit; }
 
   .feedback-carousel-shell {
 
-    gap: 7px;
+    width: 100%;
 
   }
 
 
-  /*
-    Apenas UMA imagem
-  */
-
   .feedback-marquee {
 
-    grid-template-columns: 1fr;
+    /*
+      Uma imagem inteira por vez
+    */
 
-    gap: 0;
+    gap: 12px;
 
-    padding: 10px 0;
+    padding:
+      8px 0
+      16px;
 
   }
 
 
   .feedback-img {
 
+    flex:
+      0 0
+      100%;
+
     width: 100%;
 
-    max-width: 260px;
+    height: 380px;
 
-    height: 340px;
-
-    border-radius: 12px;
-
-  }
-
-
-  /*
-    No telemóvel a imagem
-    está sempre totalmente visível
-  */
-
-  .feedback-img--active {
-
-    transform: scale(1);
-
-    opacity: 1;
+    border-radius:
+      12px;
 
   }
 
 
   /*
-    Setas menores para não
-    ocuparem muito espaço
+    Setas estilo Instagram,
+    por cima das laterais da foto
   */
 
   .feedback-arrow {
@@ -736,47 +761,55 @@ a { color: inherit; }
 
     height: 36px;
 
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+
+    background:
+      rgba(
+        6,
+        7,
+        13,
+        0.78
+      );
+
+  }
+
+
+  .feedback-arrow--left {
+
+    left: 8px;
+
+  }
+
+
+  .feedback-arrow--right {
+
+    right: 8px;
 
   }
 
 
   .feedback-dots {
 
-    max-width: 260px;
+    max-width:
+      280px;
 
-    gap: 6px;
-
-    margin-top: 12px;
-
-  }
-
-
-  .feedback-dot {
-
-    width: 7px;
-
-    height: 7px;
-
-  }
-
-
-  .feedback-dot.active {
-
-    width: 18px;
+    margin-top:
+      8px;
 
   }
 
 }
 
 
-/* Pessoas que preferem menos movimento */
+/* Menos animações caso esteja ativado
+   nas definições do dispositivo */
 
 @media (prefers-reduced-motion: reduce) {
 
-  .feedback-img {
+  .feedback-marquee {
 
-    transition: none;
+    scroll-behavior:
+      auto;
 
   }
 
