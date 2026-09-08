@@ -39,7 +39,7 @@ const PRODUTOS = [
       "Morango e Melancia & Kiwi, Maracujá e Goiaba"
     ],
     preco: 46.99,
-    imagem: "images/vapes/50kbang2in1.png",
+    imagem: "images/vapes/bangbox-blaze-50k-2in1.jpg",
     bestseller: false
   },
   {
@@ -62,7 +62,7 @@ const PRODUTOS = [
       "Melancia e Pêssego Azedo & Mirtilo Gelado & Cereja da Califórnia & Morango e Manga"
     ],
     preco: 49.99,
-    imagem: "images/vapes/300k8in1bang.png",
+    imagem: "images/vapes/bangbox-legend-geek-300k-8in1.jpg",
     bestseller: false
   },
   {
@@ -83,7 +83,7 @@ const PRODUTOS = [
       "Pêssego Gelado & Groselha Preta e Ananás Gelado & Maçã Verde e Kiwi"
     ],
     preco: 48.99,
-    imagem: "images/vapes/110k6in1bang.png",
+    imagem: "images/vapes/bangbox-leader-110k-6in1.jpg",
     bestseller: false
   },
   {
@@ -93,7 +93,7 @@ const PRODUTOS = [
     puffs: "150K PUFFS",
     sabores: [],
     preco: 48.99,
-    imagem: "images/vapes/150k6in1bang.png",
+    imagem: "images/vapes/bangbox-legend-150k-6in1.jpg",
     bestseller: false,
     disponivel: false
   },
@@ -117,7 +117,7 @@ const PRODUTOS = [
       "Melancia e Ananás & Mirtilo, Morango e Cereja"
     ],
     preco: 64.99,
-    imagem: "images/vapes/80kvapesolo.png",
+    imagem: "images/vapes/vapsolo-80k-4in1.jpg",
     bestseller: true,
     avaliacao: 4.3
   },
@@ -137,7 +137,7 @@ const PRODUTOS = [
       "Toranja e Kiwi & Melão, Melancia e Coco"
     ],
     preco: 72.99,
-    imagem: "images/vapes/180kvapesolo.png",
+    imagem: "images/vapes/vapsolo-180k-6in1.jpg",
     bestseller: true,
     avaliacao: 4.8
   },
@@ -169,7 +169,7 @@ const PRODUTOS = [
       "Limonada Rosa"
     ],
     preco: 47.99,
-    imagem: "images/vapes/40kvapesolo.png",
+    imagem: "images/vapes/vapsolo-40k-blackfruit.jpg",
     bestseller: false,
     stockBaixo: true
   },
@@ -191,7 +191,7 @@ const PRODUTOS = [
       "Kiwi e Maracujá & Morango e Romã"
     ],
     preco: 54.99,
-    imagem: "images/vapes/60kvapesolo.png",
+    imagem: "images/vapes/vapsolo-60k-strawberryraspberry.jpg",
     bestseller: false
   },
   {
@@ -212,7 +212,7 @@ const PRODUTOS = [
       "Kiwi, Mirtilo, Framboesa, Maracujá & Uva"
     ],
     preco: 52.99,
-    imagem: "images/vapes/vapesolo50k.png",
+    imagem: "images/vapes/vapsolo-50k-2in1.jpg",
     bestseller: false,
     stockBaixo: true
   },
@@ -234,7 +234,7 @@ const PRODUTOS = [
       "Toranja Arando Pêssego"
     ],
     preco: 68.99,
-    imagem: "images/vapes/vapesolo100k.png",
+    imagem: "images/vapes/vapsolo-100k-sexonthebeach.jpg",
     bestseller: true,
     stockBaixo: true,
     avaliacao: 4.4
@@ -271,7 +271,7 @@ const PRODUTOS = [
       "Morango Kiwi"
     ],
     preco: 58.99,
-    imagem: "images/vapes/20kshishapromax.png",
+    imagem: "images/vapes/vapme-20k-shishapromax.jpg",
     bestseller: true,
     avaliacao: 4.7
   },
@@ -282,7 +282,7 @@ const PRODUTOS = [
     puffs: "7000 PUFFS",
     sabores: [],
     preco: 40.25,
-    imagem: "images/vapes/vapeme7k.png",
+    imagem: "images/vapes/vapme-crystal-7k.jpg",
     bestseller: false,
     disponivel: false
   },
@@ -306,7 +306,7 @@ const PRODUTOS = [
       "Amor 66"
     ],
     preco: 44.50,
-    imagem: "images/vapes/vapme30kdigital.png",
+    imagem: "images/vapes/vapme-digital-30k.jpg",
     bestseller: false
   },
   {
@@ -329,7 +329,7 @@ const PRODUTOS = [
       "Melão, Maracujá, Amora, Gelo e Maçã, Kiwi"
     ],
     preco: 49.50,
-    imagem: "images/vapes/waspe150k.png",
+    imagem: "images/vapes/waspe-aiviou-150k.jpg",
     bestseller: false
   },
   {
@@ -355,7 +355,7 @@ const PRODUTOS = [
       "Pêssego Manga Ananás"
     ],
     preco: 46.50,
-    imagem: "images/vapes/waspebar60k.png",
+    imagem: "images/vapes/waspe-bar-60k.jpg",
     bestseller: false
   },
   {
@@ -378,7 +378,7 @@ const PRODUTOS = [
       "Framboesa de mirtilo & Limonada de mirtilo & Mistura de frutos silvestres & Gelo de mel de uva"
     ],
     preco: 48.50,
-    imagem: "images/vapes/waspe100k.png",
+    imagem: "images/vapes/waspe-100k-4in1.jpg",
     bestseller: false
   },
   {
@@ -401,7 +401,7 @@ const PRODUTOS = [
       "Limonada Razz Azul & Limão Cereja & Gelo Mirtilo & Pêssego Melancia"
     ],
     preco: 51.50,
-    imagem: "images/vapes/waspe180k.png",
+    imagem: "images/vapes/waspe-crystal-180k.jpg",
     bestseller: false
   },
   {
@@ -427,7 +427,7 @@ const PRODUTOS = [
       "Cola Gelada & Red Bull & Sex on the Beach & Ananás, Banana e Melão"
     ],
     preco: 54.50,
-    imagem: "images/vapes/stagbar80k.png",
+    imagem: "images/vapes/stagbar-80k-4in1.jpg",
     bestseller: false
   },
   {
@@ -458,7 +458,7 @@ const PRODUTOS = [
       "Kiwi Paixão Goiaba"
     ],
     preco: 46.50,
-    imagem: "images/vapes/vapejnr55kgorilla.png",
+    imagem: "images/vapes/jnr-ragegorilla-55k.jpg",
     bestseller: false
   },
   {
@@ -481,7 +481,7 @@ const PRODUTOS = [
       "Limão-Lima Gasoso, Mojito de Maçã, Gelo de Ananás, Cola Gelada"
     ],
     preco: 65.99,
-    imagem: "images/vapes/bang500k.png",
+    imagem: "images/vapes/bangbox-king-500k-8in1.jpg",
     bestseller: false,
     colecoes: ["Mais Puffs"]
   },
@@ -505,7 +505,7 @@ const PRODUTOS = [
       "Gelo de Melancia & Red Bull & Morango e Kiwi & Gelo de Mirtilo"
     ],
     preco: 63.99,
-    imagem: "images/vapes/bang450kl.png",
+    imagem: "images/vapes/bangbox-leader-450k-15in1.jpg",
     bestseller: false,
     colecoes: ["Mais Puffs"]
   },
@@ -529,7 +529,7 @@ const PRODUTOS = [
       "Maçã ácida"
     ],
     preco: 66.99,
-    imagem: "images/vapes/520kbang.png",
+    imagem: "images/vapes/bangbox-leader-520k.jpg",
     bestseller: false,
     colecoes: ["Mais Puffs"]
   },
@@ -552,7 +552,7 @@ const PRODUTOS = [
       "Melancia de morango"
     ],
     preco: 52.99,
-    imagem: "images/vapes/80shishabang.png",
+    imagem: "images/vapes/bangbox-blaze-80k-shisha.jpg",
     bestseller: false
   },
   {
@@ -562,7 +562,7 @@ const PRODUTOS = [
     puffs: "100K PUFFS",
     sabores: [],
     preco: 51.50,
-    imagem: "images/vapes/ChatGPT Image 29_08_2026, 15_14_38.png",
+    imagem: "images/vapes/happbar-100k-pro.jpg",
     bestseller: false,
     disponivel: false
   }
@@ -715,98 +715,44 @@ function atualizarPainelSabores(card, produto, qty, instanceKey) {
 
 // Fotos de feedback de clientes (carrossel na página inicial)
 const FEEDBACK_IMAGENS = [
-  "images/feedbacks/feedback1ze.png",
-  "images/feedbacks/feedback2ze.png",
-  "images/feedbacks/feedback3ze.png",
-  "images/feedbacks/feedback4ze.png",
-  "images/feedbacks/feedback5ze.png",
-  "images/feedbacks/feedback6ze.png",
-  "images/feedbacks/feedback7ze.png",
-  "images/feedbacks/feedback8ze.png",
-  "images/feedbacks/feedback9ze.png",
-  "images/feedbacks/feedback10ze.png",
-  "images/feedbacks/feedback11ze.png",
-  "images/feedbacks/feedback12ze.png"
+  "images/feedback/feedback-01.jpg",
+  "images/feedback/feedback-02.jpg",
+  "images/feedback/feedback-03.jpg",
+  "images/feedback/feedback-04.jpg",
+  "images/feedback/feedback-05.jpg",
+  "images/feedback/feedback-06.jpg",
+  "images/feedback/feedback-07.jpg",
+  "images/feedback/feedback-08.jpg",
+  "images/feedback/feedback-09.jpg",
+  "images/feedback/feedback-10.jpg",
+  "images/feedback/feedback-11.jpg",
+  "images/feedback/feedback-12.jpg"
 ];
 
 /* ======================================================
-   CARROSSEL DE FEEDBACK
+   CARROSSEL DE FEEDBACK (manual — setas para navegar)
    ====================================================== */
-function renderFeedbackMarquee() {
-  const track = document.getElementById("feedbackMarquee");
+function renderFeedbackCarousel() {
+  const track = document.getElementById("feedbackTrack");
   if (!track) return;
 
-  // Duplica a lista para permitir o loop infinito sem salto visível
-  const lista = [...FEEDBACK_IMAGENS, ...FEEDBACK_IMAGENS];
-  track.innerHTML = lista
-    .map((src, i) => `<img class="feedback-img" src="${src}" alt="Feedback de cliente" loading="lazy" data-idx="${i}">`)
+  track.innerHTML = FEEDBACK_IMAGENS
+    .map(src => `<img class="feedback-photo" src="${src}" alt="Feedback de cliente" loading="lazy">`)
     .join("");
 
-  // Pausa a animação enquanto o rato está por cima (só relevante em desktop)
-  const wrap = track.closest(".feedback-marquee-wrap");
-  wrap.addEventListener("mouseenter", () => track.classList.add("paused"));
-  wrap.addEventListener("mouseleave", () => track.classList.remove("paused"));
+  const btnPrev = document.getElementById("feedbackPrev");
+  const btnNext = document.getElementById("feedbackNext");
 
-  // Loop de deteção de foco: descobre qual imagem está mais perto do centro
-  // do ecrã visível e marca-a como "nítida", desfocando as restantes.
-  // Corre a cada ~150ms (em vez de todos os frames) para poupar desempenho,
-  // e para-se por completo se a pessoa preferir menos animações ou
-  // se a aba/separador não estiver visível.
-  const prefereMenosMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefereMenosMovimento) return;
-
-  const imgs = track.querySelectorAll(".feedback-img");
-  let intervalId = null;
-
-  function atualizarFoco() {
-    if (document.hidden) return;
-
-    const wrapRect = wrap.getBoundingClientRect();
-    const centroWrap = wrapRect.left + wrapRect.width / 2;
-
-    let maisPerto = null;
-    let menorDistancia = Infinity;
-
-    imgs.forEach(img => {
-      const rect = img.getBoundingClientRect();
-      const centroImg = rect.left + rect.width / 2;
-      const distancia = Math.abs(centroImg - centroWrap);
-      if (distancia < menorDistancia) {
-        menorDistancia = distancia;
-        maisPerto = img;
-      }
-    });
-
-    imgs.forEach(img => {
-      if (img === maisPerto) img.classList.add("is-sharp");
-      else img.classList.remove("is-sharp");
-    });
+  function scrollUmaFoto(direcao) {
+    const foto = track.querySelector(".feedback-photo");
+    if (!foto) return;
+    const gap = 16;
+    const distancia = foto.getBoundingClientRect().width + gap;
+    track.scrollBy({ left: direcao * distancia, behavior: "smooth" });
   }
 
-  function iniciar() {
-    if (intervalId) return;
-    intervalId = setInterval(atualizarFoco, 150);
-  }
-  function parar() {
-    if (!intervalId) return;
-    clearInterval(intervalId);
-    intervalId = null;
-  }
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) parar();
-    else iniciar();
-  });
-
-  // Só corre enquanto o carrossel está visível no ecrã (poupa CPU quando
-  // a pessoa está a ver outra parte da página)
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) iniciar();
-      else parar();
-    });
-  }, { threshold: 0.05 });
-  observer.observe(wrap);
+  btnPrev.addEventListener("click", () => scrollUmaFoto(-1));
+  btnNext.addEventListener("click", () => scrollUmaFoto(1));
 }
 
 /* ======================================================
@@ -1272,7 +1218,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   renderHeroCatalogButtons();
-  renderFeedbackMarquee();
+  renderFeedbackCarousel();
   renderBestsellers();
   renderMaisPuffs();
   renderFiltros();
