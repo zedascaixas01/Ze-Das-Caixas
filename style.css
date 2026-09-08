@@ -416,258 +416,367 @@ a { color: inherit; }
 
 /* ============ CARROSSEL DE FEEDBACK ============ */
 
-.feedback-marquee-wrap {
+
+/* Container geral */
+
+.feedback-carousel-wrap {
+
   position: relative;
+
   margin-top: 50px;
+
   padding-top: 4px;
-  overflow: hidden;
-}
 
-
-/* Gradiente nas laterais */
-
-.feedback-marquee-wrap::before,
-.feedback-marquee-wrap::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 60px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.feedback-marquee-wrap::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    var(--bg),
-    transparent
-  );
-}
-
-.feedback-marquee-wrap::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    var(--bg),
-    transparent
-  );
 }
 
 
 /* Título */
 
 .feedback-heading {
+
   text-align: center;
+
   font-family: var(--font-heading);
+
   text-transform: uppercase;
+
   letter-spacing: 0.05em;
+
   font-size: 0.9rem;
+
   color: var(--blue-ice);
+
   margin: 0 0 22px;
+
 }
 
 
-/* Track que contém todas as imagens */
+/* Área principal */
+
+.feedback-carousel-shell {
+
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+}
+
+
+/* Área onde aparecem as imagens */
 
 .feedback-marquee {
-  display: flex;
+
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   align-items: center;
 
   gap: 20px;
 
-  width: max-content;
+  min-width: 0;
 
-  padding: 10px 0;
-
-  will-change: transform;
-
-  animation:
-    feedback-scroll
-    38s
-    linear
-    infinite;
-}
-
-
-/* Pausa no PC quando o rato fica por cima */
-
-.feedback-marquee.paused {
-  animation-play-state: paused;
-}
-
-
-/* Movimento infinito */
-
-@keyframes feedback-scroll {
-
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    /*
-      A lista está duplicada.
-
-      Como existe gap de 20px,
-      adicionamos metade desse gap
-      para o loop não dar um pequeno salto.
-    */
-
-    transform:
-      translateX(
-        calc(-50% - 10px)
-      );
-  }
+  padding: 20px 0;
 
 }
 
 
-/* Estado normal das imagens */
+/* Feedback */
 
 .feedback-img {
 
-  height: 230px;
+  display: block;
 
-  width: auto;
+  width: 100%;
 
-  flex-shrink: 0;
+  max-width: 230px;
 
-  object-fit: cover;
+  height: 300px;
 
-  border-radius: 12px;
+  margin: 0 auto;
 
+  object-fit: contain;
 
-  /*
-    Estado desfocado
-  */
+  border-radius: 14px;
 
-  filter: blur(3px);
-
-  opacity: 0.55;
-
-  transform: scale(0.93);
-
-
-  /*
-    Transição quando entra/sai do centro
-  */
-
-  transition:
-    filter 0.35s ease,
-    opacity 0.35s ease,
-    transform 0.35s ease;
-
+  background: var(--bg-elevated);
 
   box-shadow:
-    0 12px 30px -10px
-    rgba(0, 0, 0, 0.6);
+    0 16px 35px -12px
+    rgba(0, 0, 0, 0.7);
 
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
 
-  /*
-    Ajuda principalmente Safari/mobile
-    a renderizar melhor elementos
-    animados com transform/filter
-  */
-
-  -webkit-backface-visibility: hidden;
-
-  backface-visibility: hidden;
 }
 
 
-/* Imagem que está no centro */
+/* Feedbacks laterais no PC */
 
-.feedback-img.is-sharp {
+.feedback-img--side {
 
-  filter: blur(0);
+  transform: scale(0.88);
+
+  opacity: 0.42;
+
+}
+
+
+/* Feedback principal */
+
+.feedback-img--active {
+
+  transform: scale(1);
 
   opacity: 1;
 
-  transform: scale(1.05);
+}
+
+
+/* ============================
+   SETAS
+   ============================ */
+
+.feedback-arrow {
+
+  width: 44px;
+
+  height: 44px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  border:
+    1px solid var(--border);
+
+  background:
+    var(--bg-elevated);
+
+  color:
+    var(--white);
+
+  font-size: 2rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 
 }
 
 
-/* Pessoas que têm "reduzir movimento" ativado */
+.feedback-arrow:hover {
 
-@media (prefers-reduced-motion: reduce) {
+  background:
+    var(--blue-electric);
 
-  .feedback-marquee {
+  border-color:
+    var(--blue-electric);
 
-    animation: none;
-
-  }
-
-  .feedback-img {
-
-    filter: none;
-
-    opacity: 1;
-
-    transform: none;
-
-  }
+  transform:
+    scale(1.08);
 
 }
 
 
-/* =========================
+/* ============================
+   BOLINHAS
+   ============================ */
+
+.feedback-dots {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  max-width: 400px;
+
+  margin: 14px auto 0;
+
+}
+
+
+.feedback-dot {
+
+  width: 8px;
+
+  height: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    var(--border);
+
+  cursor: pointer;
+
+  transition:
+    width 0.2s ease,
+    background 0.2s ease;
+
+}
+
+
+.feedback-dot.active {
+
+  width: 22px;
+
+  border-radius: 999px;
+
+  background:
+    var(--blue-electric);
+
+}
+
+
+/* ============================
    MOBILE
-   ========================= */
+   ============================ */
 
 @media (max-width: 640px) {
 
-  /*
-    Gradiente lateral mais pequeno
-    porque o ecrã também é mais pequeno
-  */
+  .feedback-carousel-wrap {
 
-  .feedback-marquee-wrap::before,
-  .feedback-marquee-wrap::after {
+    margin-top: 42px;
 
-    width: 30px;
+  }
+
+
+  .feedback-carousel-shell {
+
+    gap: 7px;
 
   }
 
 
   /*
-    Imagens ligeiramente menores
+    Apenas UMA imagem
   */
+
+  .feedback-marquee {
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+    padding: 10px 0;
+
+  }
+
 
   .feedback-img {
 
-    height: 160px;
+    width: 100%;
 
+    max-width: 260px;
 
-    /*
-      Blur um pouco menor no mobile.
+    height: 340px;
 
-      É bastante mais leve para
-      Safari/Chrome mobile renderizarem.
-    */
-
-    filter: blur(2px);
-
-
-    /*
-      Transição mais rápida para que
-      visualmente acompanhe melhor
-      a imagem que chegou ao centro.
-    */
-
-    transition:
-      filter 0.20s ease,
-      opacity 0.20s ease,
-      transform 0.20s ease;
+    border-radius: 12px;
 
   }
 
 
-  .feedback-img.is-sharp {
+  /*
+    No telemóvel a imagem
+    está sempre totalmente visível
+  */
 
-    filter: blur(0);
+  .feedback-img--active {
+
+    transform: scale(1);
+
+    opacity: 1;
+
+  }
+
+
+  /*
+    Setas menores para não
+    ocuparem muito espaço
+  */
+
+  .feedback-arrow {
+
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 1.6rem;
+
+  }
+
+
+  .feedback-dots {
+
+    max-width: 260px;
+
+    gap: 6px;
+
+    margin-top: 12px;
+
+  }
+
+
+  .feedback-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+  }
+
+
+  .feedback-dot.active {
+
+    width: 18px;
+
+  }
+
+}
+
+
+/* Pessoas que preferem menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .feedback-img {
+
+    transition: none;
 
   }
 

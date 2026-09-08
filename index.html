@@ -81,12 +81,47 @@
     </div>
   </div>
 
-  <div class="feedback-marquee-wrap">
-    <p class="feedback-heading">Alguns dos nossos clientes</p>
-    <div class="feedback-marquee" id="feedbackMarquee">
-      <!-- gerado via JS -->
+<div class="feedback-carousel-wrap">
+
+  <p class="feedback-heading">
+    Alguns dos nossos clientes
+  </p>
+
+  <div class="feedback-carousel-shell">
+
+    <button
+      type="button"
+      class="feedback-arrow feedback-arrow--left"
+      id="feedbackPrev"
+      aria-label="Feedback anterior"
+    >
+      ‹
+    </button>
+
+    <div
+      class="feedback-marquee"
+      id="feedbackMarquee"
+    >
+      <!-- Feedbacks gerados pelo JavaScript -->
     </div>
+
+    <button
+      type="button"
+      class="feedback-arrow feedback-arrow--right"
+      id="feedbackNext"
+      aria-label="Próximo feedback"
+    >
+      ›
+    </button>
+
   </div>
+
+  <div
+    class="feedback-dots"
+    id="feedbackDots"
+  ></div>
+
+</div>
 </section>
 
 <!-- ===== MAIS VENDIDOS ===== -->
